@@ -9,6 +9,17 @@
 	"categories": [
 		"Other"
 	],
+	"activationEvents": [
+		"onCommand:extension.askRxJSBuddy"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.askRxJSBuddy",
+				"title": "Ask RxJS buddy"
+			}
+		]
+	},
 	"main": "./out/extension.js",
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
