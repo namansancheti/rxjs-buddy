@@ -13,14 +13,20 @@ This repo contains the source code for the 'rxjs-buddy' VSCode extension:
 
 ## Features
 
-* View description for each operator.
+Supported operators:
 
-* View marble diagram for each operator.
+* *switchMap*
+* *flatMap*
+* *mergeMap*
+* *concatMap*
+* *debounceTime*
+* *auditTime*
+* *throttleTime*
 
-## Release Notes
+For each operator, you can:
 
-Users appreciate release notes as you update your extension.
+* View short description.
 
-### 1.0.0
+* View marble diagram.
 
-Initial release of ...
+* View documentation.
