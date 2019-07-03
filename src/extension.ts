@@ -40,18 +40,31 @@ export function activate(context: vscode.ExtensionContext) {
 
 function getInfoForOperator(operator: string) {
 	let description = '';
-	let diagramLink = '';
-	let documentationLink = '';
+	let diagramLink = `https://rxjs-dev.firebaseapp.com/assets/images/marble-diagrams/${operator}.png`;
+	let documentationLink = `https://rxjs-dev.firebaseapp.com/api/operators/${operator}`;
 	switch(operator) {
 		case 'switchMap':
-			diagramLink = 'https://rxjs-dev.firebaseapp.com/assets/images/marble-diagrams/switchMap.png';
 			description = 'Projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable.';
-			documentationLink = 'https://rxjs-dev.firebaseapp.com/api/operators/switchMap';
 			break;
 		case 'flatMap':
 			diagramLink = 'https://rxjs-dev.firebaseapp.com/assets/images/marble-diagrams/mergeMap.png';
 			description = 'Projects each source value to an Observable which is merged in the output Observable.';
-			documentationLink = 'https://rxjs-dev.firebaseapp.com/api/operators/flatMap';
+			break;
+		case 'mergeMap':
+			description = 'Projects each source value to an Observable which is merged in the output Observable.';
+			break;
+		case 'concatMap':
+			description = 'Projects each source value to an Observable which is merged in the output Observable, in a serialized fashion waiting for each one to complete before merging the next.';
+			break;
+		case 'debounceTime':
+			description = 'Emits a value from the source Observable only after a particular time span has passed without another source emission.';
+			break;
+		case 'auditTime':
+			description = 'Ignores source values for duration milliseconds, then emits the most recent value from the source Observable, then repeats this process.';
+			break;
+		case 'throttleTime':
+			description = 'Emits a value from the source Observable, then ignores subsequent source values for duration milliseconds, then repeats this process.';
+			break;
 		default:
 	}
 	return {
