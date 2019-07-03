@@ -14,7 +14,19 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showQuickPick(operators).then(selectedOperator => {
 			if (selectedOperator) {
 				const { diagramLink, description, documentationLink } = getInfoForOperator(selectedOperator);
-				vscode.window.showInformationMessage(`${selectedOperator}: ${description}`);
+				if (diagramLink) {
+					vscode.window.showInformationMessage(`${selectedOperator}: ${description}`, 'Diagram', 'Docs').then(selectedOption => {
+						if (selectedOption) {
+							vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
+						}
+					});
+				} else {
+					vscode.window.showInformationMessage(`${selectedOperator}: ${description}`, 'Docs').then(selectedOption => {
+						if (selectedOption) {
+							vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
+						}
+					});
+				}
 			}
 		})
 	});
