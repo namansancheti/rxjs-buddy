@@ -17,13 +17,17 @@ export function activate(context: vscode.ExtensionContext) {
 				if (diagramLink) {
 					vscode.window.showInformationMessage(`${selectedOperator}: ${description}`, 'Diagram', 'Docs').then(selectedOption => {
 						if (selectedOption) {
-							vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
+							if (selectedOption === 'Diagram') {
+								showDiagram(diagramLink);
+							} else {
+								showDocs(documentationLink);
+							}
 						}
 					});
 				} else {
 					vscode.window.showInformationMessage(`${selectedOperator}: ${description}`, 'Docs').then(selectedOption => {
 						if (selectedOption) {
-							vscode.window.showInformationMessage(`You selected: ${selectedOption}`);
+							showDocs(documentationLink);
 						}
 					});
 				}
@@ -55,6 +59,47 @@ function getInfoForOperator(operator: string) {
 		diagramLink,
 		documentationLink
 	}
+}
+
+function createWebviewPanel(enableScripts = false) {
+	return vscode.window.createWebviewPanel(
+		'RxJS Buddy',
+		'RxJS Buddy',
+		vscode.ViewColumn.One,
+		{
+			enableScripts
+		}
+	);
+}
+
+function showDiagram(link: string) {
+	const panel = createWebviewPanel();
+	const webViewContent = `
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>RxJS Buddy</title>
+		</head>
+		<body>
+			<img src="${link}"/>
+		</body>
+		</html>`;
+	panel.webview.html = webViewContent.trimLeft();
+}
+
+function showDocs(link: string) {
+	const panel = createWebviewPanel(true);
+	const webViewContent = `
+		<!DOCTYPE html>
+		<html>
+		<body>
+			<iframe src="${link}" width="100%" height="450px">
+		</iframe>
+		</body>
+		</html>`;
+	panel.webview.html = webViewContent.trimLeft();
 }
 
 export function deactivate() {}
