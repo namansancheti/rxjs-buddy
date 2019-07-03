@@ -12,11 +12,37 @@ export function activate(context: vscode.ExtensionContext) {
 			'throttleTime',
 		];
 		vscode.window.showQuickPick(operators).then(selectedOperator => {
-			vscode.window.showInformationMessage(`You selected: ${selectedOperator}`);
+			if (selectedOperator) {
+				const { diagramLink, description, documentationLink } = getInfoForOperator(selectedOperator);
+				vscode.window.showInformationMessage(`${selectedOperator}: ${description}`);
+			}
 		})
 	});
 
 	context.subscriptions.push(disposable);
+}
+
+function getInfoForOperator(operator: string) {
+	let description = '';
+	let diagramLink = '';
+	let documentationLink = '';
+	switch(operator) {
+		case 'switchMap':
+			diagramLink = 'https://rxjs-dev.firebaseapp.com/assets/images/marble-diagrams/switchMap.png';
+			description = 'Projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable.';
+			documentationLink = 'https://rxjs-dev.firebaseapp.com/api/operators/switchMap';
+			break;
+		case 'flatMap':
+			diagramLink = 'https://rxjs-dev.firebaseapp.com/assets/images/marble-diagrams/mergeMap.png';
+			description = 'Projects each source value to an Observable which is merged in the output Observable.';
+			documentationLink = 'https://rxjs-dev.firebaseapp.com/api/operators/flatMap';
+		default:
+	}
+	return {
+		description,
+		diagramLink,
+		documentationLink
+	}
 }
 
 export function deactivate() {}
