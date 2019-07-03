@@ -2,7 +2,18 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.askRxJSBuddy', () => {
-		vscode.window.showInformationMessage('RxJS buddy is activated!');
+		const operators = [
+			'switchMap',
+			'flatMap',
+			'mergeMap',
+			'concatMap',
+			'debounceTime',
+			'auditTime',
+			'throttleTime',
+		];
+		vscode.window.showQuickPick(operators).then(selectedOperator => {
+			vscode.window.showInformationMessage(`You selected: ${selectedOperator}`);
+		})
 	});
 
 	context.subscriptions.push(disposable);
