@@ -3,6 +3,7 @@
 	"displayName": "rxjs-buddy",
 	"description": "Inline help for RxJS operators",
 	"version": "0.0.1",
+	"publisher": "NamanSancheti",
 	"engines": {
 		"vscode": "^1.34.0"
 	},
