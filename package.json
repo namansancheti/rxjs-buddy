@@ -4,6 +4,10 @@
 	"description": "Inline help for RxJS operators",
 	"version": "0.0.2",
 	"publisher": "NamanSancheti",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/namansancheti/rxjs-buddy"
+	},
 	"engines": {
 		"vscode": "^1.34.0"
 	},
