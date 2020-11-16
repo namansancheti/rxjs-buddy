@@ -1,6 +1,6 @@
 # RxJS Buddy
 
-CodeLab for building the [rxjs-buddy](https://marketplace.visualstudio.com/items?itemName=NamanSancheti.rxjs-buddy) [VSCode](https://code.visualstudio.com/) extension.
+CodeLab for building the [rxjs-buddy](https://marketplace.visualstudio.com/items?itemName=NamanSancheti.rxjs-buddy) `VSCode` extension.
 
 ## Branches
 * Corresponding to each step, you will find a branch named `step-<stepNumber>`, which contains the completed code until the **previous** step. 
