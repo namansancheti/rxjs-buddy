@@ -11,7 +11,15 @@ CodeLab for building the [rxjs-buddy](https://marketplace.visualstudio.com/items
 
 ## Features
 
-Supported operators:
+For each operator, view the following without leaving VSCode! 😎
+
+* short description.
+
+* marble diagram.
+
+* documentation.
+
+### Supported operators:
 
 * [switchMap](https://rxjs-dev.firebaseapp.com/api/operators/switchMap)
 * [flatMap](https://rxjs-dev.firebaseapp.com/api/operators/flatMap)
@@ -20,11 +28,3 @@ Supported operators:
 * [debounceTime](https://rxjs-dev.firebaseapp.com/api/operators/debounceTime)
 * [auditTime](https://rxjs.dev/api/operators/auditTime)
 * [throttleTime](https://rxjs-dev.firebaseapp.com/api/operators/throttleTime)
-
-For each operator, you can:
-
-* View short description.
-
-* View marble diagram.
-
-* View documentation.
