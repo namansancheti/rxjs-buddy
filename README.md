@@ -1,27 +1,25 @@
-# 'rxjs-buddy'
+# RxJS Buddy
 
-This repo contains the source code for the 'rxjs-buddy' VSCode extension:
-
-[Link to extension on VSCode Marketplace](https://marketplace.visualstudio.com/vscode)
+CodeLab for building the [rxjs-buddy](https://marketplace.visualstudio.com/items?itemName=NamanSancheti.rxjs-buddy) [VSCode](https://code.visualstudio.com/) extension.
 
 ## Branches
-* Corresponding to each step, you will find a branch named 'step-*stepNumber*', which contains the completed code until the *previous* step. 
+* Corresponding to each step, you will find a branch named `step-<stepNumber>`, which contains the completed code until the **previous** step. 
 
-    Eg: branch '*step-3*' would contain the completed code from steps 1 and 2.
+    Eg: branch `step-3` would contain the completed code from steps 1 and 2.
 
-* Branch '*final*' contains the finished code.
+* Branch `final` contains the finished code.
 
 ## Features
 
 Supported operators:
 
-* *switchMap*
-* *flatMap*
-* *mergeMap*
-* *concatMap*
-* *debounceTime*
-* *auditTime*
-* *throttleTime*
+* [switchMap](https://rxjs-dev.firebaseapp.com/api/operators/switchMap)
+* [flatMap](https://rxjs-dev.firebaseapp.com/api/operators/flatMap)
+* [mergeMap](https://rxjs-dev.firebaseapp.com/api/operators/mergeMap)
+* [concatMap](https://rxjs-dev.firebaseapp.com/api/operators/concatMap)
+* [debounceTime](https://rxjs-dev.firebaseapp.com/api/operators/debounceTime)
+* [auditTime](https://rxjs.dev/api/operators/auditTime)
+* [throttleTime](https://rxjs-dev.firebaseapp.com/api/operators/throttleTime)
 
 For each operator, you can:
 
