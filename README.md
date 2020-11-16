@@ -19,7 +19,7 @@ For each operator, view the following without leaving VSCode! 😎
 
 * documentation.
 
-### Supported operators:
+### Supported operators
 
 * [switchMap](https://rxjs-dev.firebaseapp.com/api/operators/switchMap)
 * [flatMap](https://rxjs-dev.firebaseapp.com/api/operators/flatMap)
